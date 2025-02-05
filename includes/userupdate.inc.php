@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         require_once "dbh.inc.php";
-
+        // USER Handmatig Updaten met user_id!
         $query = "UPDATE users SET username = :username, pass = :pass, email = :email WHERE id = 6;";
 
         $stmt = $pdo->prepare($query);

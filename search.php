@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require_once "includes/dbh.inc.php";
 
-        $query = "SELECT recepten.id, recepten.naam, recepten.datum_toegevoegd 
+        $query = "SELECT recepten.id, recepten.naam, recepten.beschrijving, recepten.datum_toegevoegd 
                   FROM recepten 
                   INNER JOIN users ON recepten.user_id = users.id 
                   WHERE users.username = :usersearch";
@@ -53,8 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             foreach ($results as $row) {
                 echo "<div>";
-                echo "<h4>" . htmlspecialchars($row["username"]) . "</h4>";
+                echo "<h4>" . htmlspecialchars($row["id"]) . "</h4>";
                 echo "<p>" . htmlspecialchars($row["naam"]) . "</p>";
+                echo "<p>" . htmlspecialchars($row["beschrijving"]) . "</p>";
                 echo "<p>" . htmlspecialchars($row["datum_toegevoegd"]) . "</p>";
                 echo "</div>";
             }
