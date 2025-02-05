@@ -21,7 +21,7 @@ $_SESSION["username"] = "nieuwe naam";
         <div class="MainContent">
             <?php
             $page = isset($_GET['page']) ? $_GET['page'] : 'signup'; // Default naar signup
-            $allowed_pages = ['signup', 'update', 'delete', 'search', 'recepten'];
+            $allowed_pages = ['signup', 'updateuser', 'deleteuser', 'searchuser', 'recepten'];
 
             if (in_array($page, $allowed_pages)) {
                 $file = __DIR__ . "/pages/users/$page.php";
