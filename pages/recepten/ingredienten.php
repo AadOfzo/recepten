@@ -17,7 +17,7 @@ $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Ingrediënten Toevoegen</h1>
 
     <!-- Formulier om ingrediënt toe te voegen -->
-    <form action="../../includes/ingredienten_handler.php" method="POST">
+    <form action="/includes/ingredienten_handler.php" method="POST">
         <label for="naam">Ingrediënt Naam:</label>
         <input type="text" id="naam" name="naam" required>
 

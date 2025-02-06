@@ -1,6 +1,4 @@
 <?php
-var_dump($_POST);
-exit;  // Stop de uitvoer van de rest van de code, zodat je de output kunt bekijken
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "dbh.inc.php";
@@ -20,11 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(":eenheid", $eenheid);
             $stmt->bindParam(":categorie", $categorie);
 
-            // Voer de query uit
             $stmt->execute();
 
             // Redirect naar de ingrediëntenpagina na toevoegen
-            header("Location: ingredienten.php");
+            header("Location: ../pages/recepten/ingredienten.php");
             exit();
         } else {
             echo "Alle velden moeten ingevuld worden.";
