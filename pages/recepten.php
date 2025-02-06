@@ -5,6 +5,11 @@ $sql = "SELECT recepten.*, users.username FROM recepten
 $stmt = $pdo->query($sql);
 $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$sql_i = "SELECT * FROM ingredienten";
+$stmt_i = $pdo->query($sql_i);
+
+// Resultaten ophalen
+$ingredienten = $stmt_i->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div>
@@ -19,7 +24,14 @@ $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <input type="number" name="bereidingstijd" placeholder="Bereidingstijd (minuten)" required>
 
             <h3>Ingrediënten</h3>
-            <textarea name="ingredienten" placeholder="Bijv: 200g Boerenkool, 2 Aardappelen"></textarea>
+            <?php foreach ($ingredienten as $ingredient) : ?>
+                <ul class="no-style">
+                    <li>
+                        <?php echo htmlspecialchars($ingredient['naam']); ?> -
+                        <?php echo htmlspecialchars($ingredient['eenheid']); ?>
+                    </li>
+                </ul>
+            <?php endforeach; ?>
 
             <h3>Keukengerei</h3>
             <textarea name="keukengerei" placeholder="Bijv: Pan, Mes"></textarea>

@@ -24,7 +24,13 @@ nav ul li {
 }
 
 nav ul li a {
+    display: block;
     color: rgb(39, 46, 51);
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -35,3 +41,4 @@ nav ul li a:hover {
     background: #7dd87a;
     border-radius: 5px;
 }
+
