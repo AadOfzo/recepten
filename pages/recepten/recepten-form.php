@@ -3,13 +3,13 @@ include '../../includes/dbconnect.php';
 include '../../includes/recipe-functions.inc.php';
 
 $edit = false;
-$recipe = ['id' => '', 'naam' => '', 'beschrijving' => '', 'bereidingstijd' => ''];
+$recept = ['id' => '', 'naam' => '', 'beschrijving' => '', 'bereidingstijd' => ''];
 
 // Controleer of we een bestaand recept bewerken
 if (isset($_GET['id'])) {
     $edit = true;
-    $recipe = getRecipeById($_GET['id']);
-    $ingredients = getRecipeIngredients($_GET['id']);
+    $recept = getReceptById($_GET['id']);
+    $ingredienten = getReceptIngredienten($_GET['id']);
     $tools = getRecipeTools($_GET['id']);
     $steps = getRecipeSteps($_GET['id']);
 } else {

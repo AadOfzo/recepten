@@ -1,5 +1,5 @@
 <?php
-include '../../includes/dbh.inc.php'; // Zorg dat je databaseverbinding werkt
+include './includes/dbh.inc.php';
 
 // Haal bestaande recepten op
 $sql = "SELECT * FROM recepten";
@@ -40,7 +40,7 @@ $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <hr>
 
-    <!-- Receptenlijst -->
+    <!-- Receptenlijst  -->
     <h2>Bestaande Recepten</h2>
     <ul>
         <?php foreach ($recepten as $recept): ?>

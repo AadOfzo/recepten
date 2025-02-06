@@ -36,11 +36,7 @@ $receptenFiles = getFilesFromFolder($receptenFolder);
             <li><a href="?page=searchuser">Search User</a></li>
 
             <!-- Receptenpagina's -->
-            <?php foreach ($receptenFiles as $file): ?>
-                <li><a href="?page=<?php echo pathinfo($file, PATHINFO_FILENAME); ?>">
-                        <?php echo pathinfo($file, PATHINFO_FILENAME); ?>
-                    </a></li>
-            <?php endforeach; ?>
+            <li><a href="?page=recepten">Recepten</a></li>
         </ul>
     </nav>
 </body>
