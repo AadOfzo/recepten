@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 06 feb 2025 om 19:38
+-- Gegenereerd op: 06 feb 2025 om 23:14
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -42,7 +42,9 @@ INSERT INTO `ingredienten` (`id`, `naam`, `eenheid`, `categorie`) VALUES
 (1, 'Boerenkool', 'gram', 'Groente'),
 (2, 'Aardappel', 'stuk', 'Groente'),
 (3, 'Tomaat', 'stuk', 'Groente'),
-(4, 'Banaan', 'stuk', 'Fruit');
+(4, 'Banaan', 'stuk', 'Fruit'),
+(5, 'Rijst', 'kg', 'Overig'),
+(6, 'Vla', 'liter', 'Overig');
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,9 @@ INSERT INTO `users` (`id`, `username`, `pass`, `email`) VALUES
 (3, 'bobby_blanco', '', 'bobby@email.com'),
 (18, 'Test_User_1', '$2y$10$oid6YMkSYqxiI27AQ0zUSOD4uol8AMaFYciESEtnJkpicZ3URtlp.', 'Test_User_1@mail.com'),
 (19, 'Test_User_2', '$2y$10$HXbZATV65VD4K2oyPPGlW.trdzWVbfkVOgjciCjUCORer8JfS/eJ6', 'Test_User_2@mail.com'),
-(20, 'Test_User_3', '$2y$10$r7J6pOF/WiEcsAD5ttjc8.pjIGzrlbpDg55pt5rKQQhVvD1kYi/w.', 'Test_User_3@mail.com');
+(20, 'Test_User_3', '$2y$10$r7J6pOF/WiEcsAD5ttjc8.pjIGzrlbpDg55pt5rKQQhVvD1kYi/w.', 'Test_User_3@mail.com'),
+(21, 'Test_User_3', '$2y$10$lMAgMROdK2Q03CBF.2RRoeX7zhHekBzQJkiRtuPfsb1WK5oPYh95W', 'Test_User_3@mail.com'),
+(22, 'Test_User_4', '$2y$10$urcFQqtHrymBI/BNUJellux2.GVdTnm2P.qbmprLrhRIfYHjBlzY2', 'Test_User_4@mai.com');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -188,7 +192,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `ingredienten`
 --
 ALTER TABLE `ingredienten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `keukengerei`
@@ -218,7 +222,7 @@ ALTER TABLE `stappen`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
