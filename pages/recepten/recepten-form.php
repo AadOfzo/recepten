@@ -1,6 +1,6 @@
 <?php
-include '../../includes/dbconnect.php';
-include '../../includes/recipe-functions.inc.php';
+include '../../includes/dbh.inc.php';
+include '../../functions/recept-functions.php';
 
 $edit = false;
 $recept = ['id' => '', 'naam' => '', 'beschrijving' => '', 'bereidingstijd' => ''];
