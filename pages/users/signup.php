@@ -1,5 +1,4 @@
 <?php
-// Zorg ervoor dat session_start() alleen eenmaal wordt aangeroepen
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -13,7 +12,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
     <h1>Sign up</h1>
-    <form action="includes/formhandler.inc.php" method="post">
+    <form action="includes/form_handler.inc.php" method="post">
         <input type="text" name="username" placeholder="Gebruikersnaam" required>
         <input type="password" name="pass" placeholder="Paswoord" required>
         <input type="text" name="email" placeholder="E-Mail" required>

@@ -1,5 +1,8 @@
 <?php
-session_start(); // Start de sessie
+// Start de sessie alleen als deze nog niet gestart is
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Verwijder alle sessievariabelen
 session_unset();

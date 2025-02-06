@@ -12,7 +12,10 @@ Functionaliteiten:
 Users:
 - Users kunnen aangemaakt worden via de SignUp pagina.
 - Users kunnen gezocht worden via de Search User pagina.
+    bobby_blanco is een test User die gezocht kan worden. 
+    Hierbij zijn ook de gepostte recepten zichtbaar.
 - Users kunnen verwijderd worden via de Delete User pagina.
+- Users kunnen handmatig via userupdate.inc.php geupdate worden. 
 
 Recepten:
 

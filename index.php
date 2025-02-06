@@ -1,7 +1,16 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include('includes/dbh.inc.php');
 include 'header.php';
 
+if (!$pdo) {
+    die("Databaseverbinding mislukt!");
+} else {
+    echo "Verbonden met de database!";
+}
 // Dummy session voor test
 // $_SESSION["username"] = "nieuwe naam";
 ?>
@@ -33,6 +42,7 @@ include 'header.php';
                 'deleteuser',
                 'searchuser',
                 'recepten',
+                'ingredienten',
                 'home'
             ];
 

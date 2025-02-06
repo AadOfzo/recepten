@@ -1,7 +1,10 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (isset($_SESSION['user_id'])) {
-    header("Location: recepten.php"); // Als je al ingelogd bent, doorverwijzen naar de receptenpagina
+    header("Location: ../pages/recepten/recepten.php"); // Redirect naar receptenpagina na inloggen
     exit();
 }
 ?>
@@ -18,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
     <h1>Inloggen</h1>
-    <form action="includes/loginhandler.inc.php" method="post">
+    <form action="../../includes/login_handler.inc.php" method="post">
         <input type="text" name="username" placeholder="Gebruikersnaam" required>
         <input type="password" name="pass" placeholder="Paswoord" required>
         <button>Inloggen</button>

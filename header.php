@@ -39,14 +39,15 @@ $receptenFiles = getFilesFromFolder($receptenFolder);
                 <li><a href="?page=login">Login</a></li>
             <?php else: ?>
                 <!-- Niet conditioneel gerendered -->
-                <li><a href="./pages/home.php">Home</a></li>
+                <li><a href="?page=home">Home</a></li>
                 <li><a href="?page=deleteuser">Delete User</a></li>
                 <li><a href="?page=searchuser">Search User</a></li>
-                <li><a href="./pages/users/logout.php">Logout</a></li>
+                <li><a href="?page=logout">Logout</a></li>
             <?php endif; ?>
 
             <!-- Receptenpagina's -->
             <li><a href="?page=recepten">Recepten</a></li>
+            <li><a href="?page=ingredienten">Ingredienten</a></li>
         </ul>
     </nav>
 </body>
