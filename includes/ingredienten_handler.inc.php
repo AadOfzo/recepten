@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
 
             // Redirect naar de ingrediëntenpagina na toevoegen
-            header("Location: ../pages/recepten/ingredienten.php");
+            header("Location: /recepten/?page=ingredienten");
             exit();
         } else {
             echo "Alle velden moeten ingevuld worden.";

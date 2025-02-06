@@ -49,6 +49,6 @@ if (isset($_POST['submit'])) {
         $stmt->execute();
     }
 
-    header("Location: ../pages/recepten/boerenkool.php?id=" . $recept_id);
+    header("Location: /recepten/boerenkool.php?id=" . $recept_id);
     exit;
 }

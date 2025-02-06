@@ -29,40 +29,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
+<div>
+    <h3>Zoek Resultaten "<?php echo htmlspecialchars($userSearch); ?>"</h3>
 
-<!DOCTYPE html>
-<html lang="en">
+    <?php
+    if (empty($results)) {
+        echo "<div>";
+        echo "<p>Geen resultaten gevonden.</p>";
+        echo "</div>";
+    } else {
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Search</title>
-</head>
-
-<body>
-    <section>
-        <h3>Zoek Resultaten "<?php echo htmlspecialchars($userSearch); ?>"</h3>
-
-        <?php
-        if (empty($results)) {
+        foreach ($results as $row) {
             echo "<div>";
-            echo "<p>Geen resultaten gevonden.</p>";
+            echo "<h4>" . htmlspecialchars($row["id"]) . "</h4>";
+            echo "<p>" . htmlspecialchars($row["naam"]) . "</p>";
+            echo "<p>" . htmlspecialchars($row["beschrijving"]) . "</p>";
+            echo "<p>" . htmlspecialchars($row["datum_toegevoegd"]) . "</p>";
             echo "</div>";
-        } else {
-
-            foreach ($results as $row) {
-                echo "<div>";
-                echo "<h4>" . htmlspecialchars($row["id"]) . "</h4>";
-                echo "<p>" . htmlspecialchars($row["naam"]) . "</p>";
-                echo "<p>" . htmlspecialchars($row["beschrijving"]) . "</p>";
-                echo "<p>" . htmlspecialchars($row["datum_toegevoegd"]) . "</p>";
-                echo "</div>";
-            }
         }
+    }
 
-        ?>
-    </section>
-</body>
-
-</html>
+    ?>
+</div>

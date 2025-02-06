@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_id"] = $pdo->lastInsertId();
 
             // Redirect naar een andere pagina na succesvolle registratie
-            header("Location: /pages/recepten/recepten.php");
+            header("Location: /recepten/?page=home");
             exit();
         }
 
@@ -35,5 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Query failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../index.php");
+    header("Location: /recepten/?page=home");
 }

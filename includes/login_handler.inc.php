@@ -16,11 +16,12 @@ if (isset($_POST['username']) && isset($_POST['pass'])) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
+            // echo "iets";
             if (password_verify($pass, $user['pass'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
-                session_regenerate_id(true); // Regenerate session ID
-                header("Location: /pages/recepten/recepten.php");
+                session_regenerate_id(true);
+                header("Location: /recepten/?page=home");
                 exit();
             } else {
                 $error = "Incorrect password.";
@@ -34,7 +35,7 @@ if (isset($_POST['username']) && isset($_POST['pass'])) {
         echo "<p style='color: red;'>$error</p>";
     }
 } else {
-    $error = "All fields are required."; // More user-friendly message
+    $error = "All fields are required.";
     if (isset($error)) {
         echo "<p style='color: red;'>$error</p>";
     }

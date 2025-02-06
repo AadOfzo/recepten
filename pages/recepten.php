@@ -7,10 +7,7 @@ $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 include '../../includes/dbh.inc.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="nl">
-
-<body>
+<div>
     <div class="container">
         <h1>Recepten Pagina</h1>
 
@@ -50,6 +47,4 @@ include '../../includes/dbh.inc.php';
         </ul>
     </div>
 
-</body>
-
-</html>
+</div>

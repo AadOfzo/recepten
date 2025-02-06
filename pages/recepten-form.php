@@ -19,15 +19,8 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="nl">
 
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo $edit ? 'Bewerk' : 'Voeg Toe'; ?> Recept</title>
-</head>
-
-<body>
+<div>
     <h1><?php echo $edit ? 'Bewerk' : 'Voeg Toe'; ?> Recept</h1>
     <form action="../../includes/process-recipe.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $recipe['id']; ?>">
@@ -88,6 +81,4 @@ if (isset($_GET['id'])) {
             div.innerHTML += '<textarea name="stappen[]" placeholder="Stap"></textarea><br>';
         }
     </script>
-</body>
-
-</html>
+</div>

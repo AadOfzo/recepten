@@ -13,11 +13,11 @@ $stmt = $pdo->query($sql);
 $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<body>
+<div>
     <h1>Ingrediënten Toevoegen</h1>
 
     <!-- Formulier om ingrediënt toe te voegen -->
-    <form action="/includes/ingredienten_handler.php" method="POST">
+    <form action="includes/ingredienten_handler.inc.php" method="POST">
         <label for="naam">Ingrediënt Naam:</label>
         <input type="text" id="naam" name="naam" required>
 
@@ -69,4 +69,4 @@ $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </tbody>
     </table>
-</body>
+</div>

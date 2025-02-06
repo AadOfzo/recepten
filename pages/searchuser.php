@@ -1,4 +1,4 @@
-<body>
+<div>
     <h1>Zoek Gebruiker</h1>
     <form class="searchform" action="search.php" method="post">
         <label for="search">Search for user:</label>
@@ -6,4 +6,4 @@
         <button>Search</button>
     </form>
 
-</body>
+</div>

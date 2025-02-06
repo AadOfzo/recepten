@@ -1,4 +1,4 @@
-<body>
+<div>
     <h1>Delete</h1>
 
     <?php
@@ -13,4 +13,4 @@
         <input type="password" name="pass" placeholder="Paswoord" required>
         <button>Delete</button>
     </form>
-</body>
+</div>

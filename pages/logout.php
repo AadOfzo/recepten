@@ -11,5 +11,5 @@ session_unset();
 session_destroy();
 
 // Redirect de gebruiker naar de homepage of een andere pagina na uitloggen
-header("Location: ../pages/home.php");
+header("Location: /recepten/?page=home");
 exit();
