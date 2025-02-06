@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Controleer of de gebruiker al is ingelogd
 if (isset($_SESSION['user_id'])) {
-    header("Location: recepten.php"); // Als je al ingelogd bent, doorverwijzen naar de receptenpagina
+    header("Location: index.php"); // Als je al ingelogd bent, doorverwijzen naar de receptenpagina
     exit();
 }
 ?>

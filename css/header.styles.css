@@ -7,7 +7,7 @@ nav {
 }
 
 nav h3 {
-    color: white;
+    color: rgb(60, 69, 155);
     margin: 0;
 }
 
@@ -24,7 +24,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(33, 111, 156);
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../dbh.inc.php';
+include '../includes/dbh.inc.php';
 
 if (isset($_POST['username']) && isset($_POST['pass'])) {
     $username = $_POST['username'];

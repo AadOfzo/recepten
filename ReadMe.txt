@@ -7,6 +7,13 @@ Als extensions heb ik SQLTools gebruikt van Matheus Teixeira.
 3 Open http://localhost/phpmyadmin/index.php in de browser (ik heb Google Chrome gebruikt).
 4 Open http://localhost/recepten/index.php in de browser.
 
+Functionaliteiten:
+Users:
+- Users kunnen aangemaakt worden via de SignUp pagina.
+- Users kunnen gezocht worden via de Search User pagina.
+- Users kunnen verwijderd worden via de Delete User pagina.
+
+Recepten:
 
 Gebruikte referenties:
 https://youtu.be/H2XtR1zwg6s?si=1rukKk-Jwdnn5pbO - 16 tm 22 Databases aanmaken en CRUD operaties op users.
