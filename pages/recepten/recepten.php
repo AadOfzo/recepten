@@ -1,8 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include './includes/dbh.inc.php';
 
-// Haal bestaande recepten op
-$sql = "SELECT * FROM recepten";
+$sql = "SELECT recepten.*, users.username FROM recepten 
+        JOIN users ON recepten.user_id = users.id";
 $stmt = $pdo->query($sql);
 $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -21,9 +24,9 @@ $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <h1>Recepten Pagina</h1>
 
-        <!-- Formulier om een nieuw recept toe te voegen -->
         <h2>Voeg een nieuw recept toe</h2>
         <form action="includes/formhandler.inc.php" method="post">
+            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
             <input type="text" name="naam" placeholder="Receptnaam" required>
             <textarea name="beschrijving" placeholder="Beschrijving"></textarea>
             <input type="number" name="bereidingstijd" placeholder="Bereidingstijd (minuten)" required>
@@ -42,7 +45,6 @@ $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <hr>
 
-        <!-- Receptenlijst  -->
         <h2>Bestaande Recepten</h2>
         <ul>
             <?php foreach ($recepten as $recept): ?>
@@ -50,6 +52,8 @@ $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <strong><?php echo htmlspecialchars($recept['naam']); ?></strong> -
                     <?php echo htmlspecialchars($recept['beschrijving']); ?>
                     (<?php echo $recept['bereidingstijd']; ?> min)
+                    <br>
+                    <small>Gemaakt door: <?php echo htmlspecialchars($recept['username']); ?></small>
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -9,8 +9,6 @@ $receptenFolder = 'pages/recepten/';
 
 $userFiles = getFilesFromFolder($usersFolder);
 $receptenFiles = getFilesFromFolder($receptenFolder);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -26,17 +24,27 @@ $receptenFiles = getFilesFromFolder($receptenFolder);
 
 <body>
     <nav>
-        <h3>Welkom, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</h3>
+        <?php if (isset($_SESSION["username"])): ?>
+            <h3>Welkom, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</h3>
+        <?php else: ?>
+            <h3>Welkom, gast!</h3>
+        <?php endif; ?>
 
         <ul>
             <!-- Gebruikerspagina's -->
-            <li><a href="?page=signup">Sign Up</a></li>
-            <li><a href="?page=updateuser">Update User</a></li>
-            <li><a href="?page=deleteuser">Delete User</a></li>
-            <li><a href="?page=searchuser">Search User</a></li>
+            <?php if (!isset($_SESSION["username"])): ?>
+                <li><a href="?page=signup">Sign Up</a></li>
+                <li><a href="?page=login">Login</a></li>
+            <?php else: ?>
+                <li><a href="?page=updateuser">Update User</a></li>
+                <li><a href="?page=deleteuser">Delete User</a></li>
+                <li><a href="?page=searchuser">Search User</a></li>
+            <?php endif; ?>
 
             <!-- Receptenpagina's -->
             <li><a href="?page=recepten">Recepten</a></li>
         </ul>
     </nav>
 </body>
+
+</html>

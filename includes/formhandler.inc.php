@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Gebruiker opslaan
         if (isset($_POST["username"]) && isset($_POST["pass"]) && isset($_POST["email"])) {
             $username = $_POST["username"];
-            $pass = $_POST["pass"];
+            $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);  // Het wachtwoord hashen
             $email = $_POST["email"];
 
             $query = "INSERT INTO users (username, pass, email) VALUES (:username, :pass, :email)";
@@ -17,6 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(":email", $email);
 
             $stmt->execute();
+
+            // Sla de gebruiker in de sessie op
+            session_start();
+            $_SESSION["username"] = $username;
+            $_SESSION["user_id"] = $pdo->lastInsertId();  // Haal het ID van de net toegevoegde gebruiker
+
+            // Redirect naar een andere pagina na succesvolle registratie
+            header("Location: ../pages/recepten/recepten.php");
+            exit();
         }
 
         // Recept opslaan
@@ -24,12 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $recept = $_POST["recept"];
             $beschrijving = $_POST["beschrijving"];
             $bereidingstijd = $_POST["bereidingstijd"];
+            $user_id = $_POST["user_id"]; // Haal de user_id op
 
-            $query = "INSERT INTO recepten (naam, beschrijving, bereidingstijd) VALUES (:naam, :beschrijving, :bereidingstijd)";
+            $query = "INSERT INTO recepten (naam, beschrijving, bereidingstijd, user_id) VALUES (:naam, :beschrijving, :bereidingstijd, :user_id)";
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(":naam", $recept);
             $stmt->bindParam(":beschrijving", $beschrijving);
             $stmt->bindParam(":bereidingstijd", $bereidingstijd);
+            $stmt->bindParam(":user_id", $user_id); // Sla de gebruiker op
             $stmt->execute();
 
             // ID van het toegevoegde recept ophalen
@@ -74,14 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             }
         }
-
         // Sluit de databaseverbinding
         $pdo = null;
         $stmt = null;
-
-        // Redirect naar index
-        header("Location: ../index.php");
-        die();
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }

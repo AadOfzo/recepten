@@ -3,7 +3,7 @@ include('includes/dbh.inc.php');
 include 'header.php';
 
 // Dummy session voor test
-$_SESSION["username"] = "nieuwe naam";
+// $_SESSION["username"] = "nieuwe naam";
 ?>
 
 <!DOCTYPE html>
