@@ -24,7 +24,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(33, 111, 156);
+    color: rgb(39, 46, 51);
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -32,6 +32,6 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #555;
+    background: #7dd87a;
     border-radius: 5px;
 }
