@@ -23,11 +23,14 @@ $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <label for="eenheid">Eenheid:</label>
         <select id="eenheid" name="eenheid">
-            <?php
-            foreach ($eenheden as $eenheid) {
-                echo "<option value=\"$eenheid\">$eenheid</option>";
-            }
-            ?>
+            <option value="kg">kg</option>
+            <option value="g">g</option>
+            <option value="liter">liter</option>
+            <option value="ml">ml</option>
+            <option value="stuk">stuk</option>
+            <option value="tros">tros</option>
+            <option value="el">el</option>
+            <option value="tl">tl</option>
         </select>
 
         <label for="categorie">Categorie:</label>

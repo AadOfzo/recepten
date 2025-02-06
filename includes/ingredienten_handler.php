@@ -1,4 +1,7 @@
 <?php
+var_dump($_POST);
+exit;  // Stop de uitvoer van de rest van de code, zodat je de output kunt bekijken
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "dbh.inc.php";
 
