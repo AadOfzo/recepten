@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $deleteStmt->execute();
 
                 // Redirect naar de indexpagina na het verwijderen met een bevestiging
-                header("Location: ../deleteuser.php?deleted=true");
+                header("Location: /recepten/?page=delete_user&deleted=true");
                 exit();
             } else {
                 // Wachtwoord komt niet overeen

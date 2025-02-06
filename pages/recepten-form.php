@@ -1,5 +1,4 @@
 <?php
-include '../../includes/dbh.inc.php';
 include '../../functions/recept-functions.php';
 
 $edit = false;

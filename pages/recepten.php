@@ -4,7 +4,7 @@ $sql = "SELECT recepten.*, users.username FROM recepten
         JOIN users ON recepten.user_id = users.id";
 $stmt = $pdo->query($sql);
 $recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
-include '../../includes/dbh.inc.php';
+
 ?>
 
 <div>

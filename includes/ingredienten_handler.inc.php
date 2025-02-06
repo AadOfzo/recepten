@@ -35,5 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Redirect als het formulier niet via POST wordt ingediend
-    header("Location: ingredienten.php");
+    header("Location: /recepten/?page=ingredienten");
 }

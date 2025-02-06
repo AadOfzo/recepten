@@ -18,6 +18,11 @@ Users:
 - Users kunnen handmatig via userupdate.inc.php geupdate worden. 
 
 Recepten:
+- Ingredienten kunnen gepost worden en komen in de database.
+
+
+Onduidelijkheden:
+- session_start(); er zijn 8 instanties van session_start(); ik ben er niet goed achter gekomen hoe deze geïmplementeerd moet worden.
 
 Gebruikte referenties:
 https://youtu.be/H2XtR1zwg6s?si=1rukKk-Jwdnn5pbO - 16 tm 22 Databases aanmaken en CRUD operaties op users.

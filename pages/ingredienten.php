@@ -1,7 +1,4 @@
 <?php
-// Include de databaseverbinding
-include 'includes/dbh.inc.php';
-
 // Opties voor eenheden
 $eenheden = ['kg', 'g', 'liter', 'ml', 'stuk', 'tros', 'el', 'tl'];
 
@@ -62,8 +59,8 @@ $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?php echo htmlspecialchars($ingredient['eenheid']); ?></td>
                     <td><?php echo htmlspecialchars($ingredient['categorie']); ?></td>
                     <td>
-                        <a href="updateingredient.php?id=<?php echo $ingredient['id']; ?>">Bewerken</a> |
-                        <a href="deleteingredient.php?id=<?php echo $ingredient['id']; ?>">Verwijderen</a>
+                        <a href="includes/update_ingredient.php?id=<?php echo $ingredient['id']; ?>">Bewerken</a> |
+                        <a href="includes/delete_ingredient.php?id=<?php echo $ingredient['id']; ?>">Verwijderen</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

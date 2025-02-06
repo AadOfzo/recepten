@@ -8,7 +8,7 @@
     }
     ?>
 
-    <form action="includes/deleteuser.inc.php" method="post">
+    <form action="includes/delete_user.inc.php" method="post">
         <input type="text" name="username" placeholder="Gebruikersnaam" required>
         <input type="password" name="pass" placeholder="Paswoord" required>
         <button>Delete</button>

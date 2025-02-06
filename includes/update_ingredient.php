@@ -1,5 +1,4 @@
 <?php
-// Include de databaseverbinding
 include 'includes/dbh.inc.php';
 
 if (isset($_GET['id'])) {
@@ -24,7 +23,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <h1>Bewerk Ingrediënt</h1>
-<form action="ingredienten_update_handler.php" method="POST">
+<form action="includes/ingredienten_update_handler.php" method="POST">
     <input type="hidden" name="id" value="<?php echo $ingredient['id']; ?>">
 
     <label for="naam">Ingrediënt Naam:</label>

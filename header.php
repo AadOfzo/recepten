@@ -20,6 +20,7 @@ $receptenFiles = getFilesFromFolder($receptenFolder);
     <?php endif; ?>
 
     <ul>
+        <li><a href="?page=home">Home</a></li>
         <!-- Gebruikerspagina's -->
         <?php if (!isset($_SESSION["username"])): ?>
             <!-- conditioneel gerendered -->
@@ -27,14 +28,14 @@ $receptenFiles = getFilesFromFolder($receptenFolder);
             <li><a href="?page=login">Login</a></li>
         <?php else: ?>
             <!-- Niet conditioneel gerendered -->
-            <li><a href="?page=home">Home</a></li>
-            <li><a href="?page=deleteuser">Gebruiker verwijderen</a></li>
-            <li><a href="?page=searchuser">Gebruiker Zoeken</a></li>
-        <?php endif; ?>
+            <li><a href="?page=delete_user">Gebruiker verwijderen</a></li>
+            <li><a href="?page=search_user">Gebruiker zoeken</a></li>
 
-        <!-- Receptenpagina's -->
-        <li><a href="?page=recepten">Recepten</a></li>
-        <li><a href="?page=ingredienten">Ingredienten</a></li>
-        <li><a href="?page=logout">Uitloggen</a></li>
+            <!-- Receptenpagina's -->
+            <li><a href="?page=recepten">Recepten</a></li>
+            <li><a href="?page=ingredienten">Ingredienten</a></li>
+            <li><a href="?page=logout">Uitloggen</a></li>
+
+        <?php endif; ?>
     </ul>
 </nav>
